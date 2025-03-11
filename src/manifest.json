@@ -1,43 +1,51 @@
 {
-  "name": "ebay Preview",
+  "name": "eBay Display Total Cost",
   "version": "1.0.28",
   "manifest_version": 3,
-  "description": "Show the total price/cost of ebay items (price+shipping)",
+  "description": "Show the total price/cost of eBay items (price + shipping)",
   "icons": {
     "48": "icon48.png",
     "128": "icon128.png"
   },
   "permissions": [
-    "https://*.ebay.org/",
-    "https://*.ebay.ca/",
-    "https://*.ebay.at/",
-    "https://*.ebay.cz/",
-    "https://*.ebay.fi/",
-    "https://*.ebay.de/",
-    "https://*.ebay.gr/",
-    "https://*.ebay.it/",
-    "https://*.ebay.pl/",
-    "https://*.ebay.pt/",
-    "https://*.ebay.es/",
-    "https://*.ebay.se/",
-    "https://*.ebay.ch/",
-    "https://*.ebay.com.tr/",
-    "https://*.ebay.co.uk/",
-    "https://*.ebay.com.cn/",
-    "https://*.ebay.hk/",
-    "https://*.ebay.co.in/",
-    "https://*.ebay.jp/",
-    "https://*.ebay.co.kr/",
-    "https://*.ebay.com.ph/",
-    "https://*.ebay.com.sg/",
-    "https://*.ebay.com.tw/",
-    "https://*.ebay.co.th/",
-    "https://*.ebay.com.au/",
-    "https://*.ebay.co.nz/",
-    "https://*.ebay.com.mx/",
-    "https://*.ebay.co.za/",
-    "https://*.ebay.com/"
+    "storage",
+    "activeTab",
+    "scripting"
   ],
+  "host_permissions": [
+    "https://*.ebay.org/*",
+    "https://*.ebay.ca/*",
+    "https://*.ebay.at/*",
+    "https://*.ebay.cz/*",
+    "https://*.ebay.fi/*",
+    "https://*.ebay.de/*",
+    "https://*.ebay.gr/*",
+    "https://*.ebay.it/*",
+    "https://*.ebay.pl/*",
+    "https://*.ebay.pt/*",
+    "https://*.ebay.es/*",
+    "https://*.ebay.se/*",
+    "https://*.ebay.ch/*",
+    "https://*.ebay.com.tr/*",
+    "https://*.ebay.co.uk/*",
+    "https://*.ebay.com.cn/*",
+    "https://*.ebay.hk/*",
+    "https://*.ebay.co.in/*",
+    "https://*.ebay.jp/*",
+    "https://*.ebay.co.kr/*",
+    "https://*.ebay.com.ph/*",
+    "https://*.ebay.com.sg/*",
+    "https://*.ebay.com.tw/*",
+    "https://*.ebay.co.th/*",
+    "https://*.ebay.com.au/*",
+    "https://*.ebay.co.nz/*",
+    "https://*.ebay.com.mx/*",
+    "https://*.ebay.co.za/*",
+    "https://*.ebay.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -83,36 +91,7 @@
       "run_at": "document_start"
     }
   ],
-  "content_security_policy": {},
-  "host_permissions": [
-    "https://*.ebay.org/",
-    "https://*.ebay.ca/",
-    "https://*.ebay.at/",
-    "https://*.ebay.cz/",
-    "https://*.ebay.fi/",
-    "https://*.ebay.de/",
-    "https://*.ebay.gr/",
-    "https://*.ebay.it/",
-    "https://*.ebay.pl/",
-    "https://*.ebay.pt/",
-    "https://*.ebay.es/",
-    "https://*.ebay.se/",
-    "https://*.ebay.ch/",
-    "https://*.ebay.com.tr/",
-    "https://*.ebay.co.uk/",
-    "https://*.ebay.com.cn/",
-    "https://*.ebay.hk/",
-    "https://*.ebay.co.in/",
-    "https://*.ebay.jp/",
-    "https://*.ebay.co.kr/",
-    "https://*.ebay.com.ph/",
-    "https://*.ebay.com.sg/",
-    "https://*.ebay.com.tw/",
-    "https://*.ebay.co.th/",
-    "https://*.ebay.com.au/",
-    "https://*.ebay.co.nz/",
-    "https://*.ebay.com.mx/",
-    "https://*.ebay.co.za/",
-    "https://*.ebay.com/"
-  ]
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }
